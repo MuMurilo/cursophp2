@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Listagem de Amigos - MYSQLI</title>
 </head>
 
+
+
 <body>
     <a href="index.php" class="w3-display-topleft">
-        <i class="fa fa-arrow-circle-left w3-large w3-teal w3-button w3-xxlarge"></i>
+        <i class="fas fa-solid fa-arrow-left w3-teal w3-button w3-xxlarge"></i>
     </a>
+    <br><br><br><br>
     <?php
     $servername = "localhost";
     $username = "root";
@@ -30,7 +33,7 @@ margin">Listagem de Amigos</h1>
 <table class="w3-table-all w3-centered">
 <thead>
 <tr class="w3-center w3-teal">
-<th>Código</th>
+
 <th>Nome</th>
 <th>Apelido</th>
 <th>Email</th>
@@ -44,7 +47,7 @@ margin">Listagem de Amigos</h1>
     if ($resultado != null)
         foreach ($resultado as $linha) {
             echo '<tr>';
-            echo '<td>' . $linha['idamigo'] . '</td>';
+            // echo '<td>' . $linha['idamigo'] . '</td>';
             echo '<td>' . $linha['nome'] . '</td>';
             echo '<td>' . $linha['apelido'] . '</td>';
             echo '<td>' . $linha['email'] . '</td>';
