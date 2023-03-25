@@ -25,9 +25,7 @@
         if ($conexao->query($sql) === TRUE) {
             echo '
 <a href="listar.php">
-<h1 class="w3-button w3-teal">Amigo Excluido com sucesso! </h1>
-</a>
-';
+<h1 class="w3-button w3-teal">Amigo Excluido com sucesso! </h1></a>';
         } else {
             echo '
 <a href="listar.php">
