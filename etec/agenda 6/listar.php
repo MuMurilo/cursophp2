@@ -17,7 +17,7 @@
     <?php
     $servername = "localhost";
     $username = "root";
-    $password = "usbw";
+    $password = "060291";
     $dbname = "pwii";
     $conexao = new mysqli($servername, $username, $password, $dbname);
     if ($conexao->connect_error) {
