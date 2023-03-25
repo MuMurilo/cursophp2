@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Cadastro - MYSQLI</title>
+    <title>Exclusão - MYSQLI</title>
 </head>
 
 <body>
-    <div class="w3-padding w3-content w3-text-grey w3-third w3-display-middle">
+    <div class="w3-padding w3-content w3-text-grey w3-third w3-displaymiddle" id="eProfissional">
         <?php
         $servername = "localhost";
         $username = "root";
@@ -21,23 +21,20 @@
         if ($conexao->connect_error) {
             die("Connection failed: " . $conexao->connect_error);
         }
-        $sql = "INSERT INTO amigo (nome, apelido, email)
-VALUES ('" . $_POST['txtNome'] . "', '" . $_POST['txtApelido'] . "', '" . $_POST['txtEmail'] . "')";
+        $sql = "DELETE FROM amigo WHERE idamigo = '" . $_POST['txtID'] . "';";
         if ($conexao->query($sql) === TRUE) {
             echo '
-<a href="index.html">
-<h1 class="w3-button w3-teal">Amigo Salvo com sucesso! </h1>
+<a href="listar.php">
+<h1 class="w3-button w3-teal">Amigo Excluido com sucesso! </h1>
 </a>
 ';
         } else {
             echo '
-<a href="index.php"><h1 class="w3-button w3-teal">ERRO! </h1>
+<a href="listar.php">
+<h1 class="w3-button w3-teal">ERRO! </h1>
 </a>
 ';
         }
         $conexao->close();
         ?>
     </div>
-</body>
-
-</html>

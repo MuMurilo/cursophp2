@@ -52,8 +52,7 @@ margin">Listagem de Amigos</h1>
             echo '<td>' . $linha['apelido'] . '</td>';
             echo '<td>' . $linha['email'] . '</td>';
             echo '<td><a href="excluir.php?id=' . $linha['idamigo'] . '&nome=' . $linha['nome'] . '&apelido=' . $linha['apelido'] . '&email=' . $linha['email'] . '"><i class="fa fa-user-times w3-large w3-text-teal"></i> </a></td></td>';
-            echo '<td><a href="atualizar.php?id=' . $linha['idamigo'] . '&nome=' . $linha['nome'] . '&apelido=' . $linha['apelido'] . '&email=' . $linha['email'] .
-                '"><i class="fa fa-refresh w3-large w3-text-teal""></i></a></td></td>';
+            echo '<td><a href="atualizar.php?id=' . $linha['idamigo'] . '&nome=' . $linha['nome'] . '&apelido=' . $linha['apelido'] . '&email=' . $linha['email'] .'"><i class="fa fa-user-edit w3-large w3-text-teal"></i> </a></td></td>';
             echo '</tr>';
         }
     echo '
@@ -65,3 +64,4 @@ margin">Listagem de Amigos</h1>
 </body>
 
 </html>
+
