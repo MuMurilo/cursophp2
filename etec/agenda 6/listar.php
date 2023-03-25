@@ -13,7 +13,7 @@
 
 
 <body>
-    <a href="index.php" class="w3-display-topleft">
+    <a href="index.html" class="w3-display-topleft">
         <i class="fas fa-solid fa-arrow-left w3-teal w3-button w3-xxlarge"></i>
     </a>
     <br><br><br><br>
