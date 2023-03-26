@@ -23,7 +23,7 @@
             <label class="w3-text-blue" style="fontweight: bold;">Nome</label>
             <input name="txtNome" class="w3-input w3-light-grey w3-border"><br>
             <label class="w3-text-blue" style="fontweight: bold;">Preço</label>
-            <input name="txtPreco" class="w3-input w3-light-grey w3-border"><br>
+            <input name="txtPreco" type="number" step="0.01" class="w3-input w3-light-grey w3-border"><br>
             <label class="w3-text-blue" style="fontweight: bold;">Quantidade</label>
             <input name="txtQtd" class="w3-input w3-light-grey w3-border"><br>
             <button name="btnAdd" class="w3-button w3-blue w3-cell w3-roundlarge w3-right w3-margin-right">

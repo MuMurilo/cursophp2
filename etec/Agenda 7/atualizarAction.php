@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
-    <title>Cadastro - PDO</title>
+    <title>Atualização - PDO</title>
 </head>
 
 <body class="w3-black">
@@ -18,28 +18,34 @@
         $senha = "060291";
         $bd = "pwii";
         try {
-            $conecta = new PDO("mysql:dbname=$bd; host=$host; port=3306; charset=utf8", $usuario, $senha);
+            $conecta = new PDO("mysql:dbname=$bd; host=$host; port=3306; chars
+et=utf8", $usuario, $senha);
             $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conectado";
         } catch (PDOException $e) {
             echo "falha ao conectar: " . $e->getMessage();
         }
-        $sql = "INSERT INTO produto (nome, preco, quantidade) VALUES ('" . $_POST['txtNome'] ."', '" . $_POST['txtPreco'] . "', '" . $_POST['txtQtd'] . "')";
         try {
-            $resultado = $conecta->query($sql);
+            $sql = $conecta->prepare("UPDATE produto SET nome = ?, preco = ?,
+quantidade=? WHERE idproduto = ?;");
+            $sql->bindParam(1, $_POST['txtNome']);
+            $sql->bindParam(2, $_POST['txtPreco']);
+            $sql->bindParam(3, $_POST['txtQtd']);
+            $sql->bindParam(4, $_POST['txtID']);
+            $sql->execute();
             echo '
-<a href="index.php">
-<h1 class="w3-button w3-blue">Produto Salvo com sucesso! </h1></a>
+<a href="listar.php">
+<h1 class="w3-button w3-deeppurple ">Produto Atualizado com sucesso! </h1>
+</a>
 ';
         } catch (PDOException $e) {
             echo '
-<a href="index.php">
-<h1 class="w3-button w3-blue">ERRO! </h1>
+<a href="listar.php">
+<h1 class="w3-button w3-deep-purple ">ERRO! </h1>
 </a>
 ';
         }
         ?>
     </div>
 </body>
-<script src="https://kit.fontawesome.com/ef4189ae1e.js" crossorigin="anonymous"></script>
+
 </html>
