@@ -18,15 +18,13 @@
         $senha = "060291";
         $bd = "pwii";
         try {
-            $conecta = new PDO("mysql:dbname=$bd; host=$host; port=3306; chars
-et=utf8", $usuario, $senha);
+            $conecta = new PDO("mysql:dbname=$bd; host=$host; port=3306; charset=utf8", $usuario, $senha);
             $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo "falha ao conectar: " . $e->getMessage();
         }
         try {
-            $sql = $conecta->prepare("UPDATE produto SET nome = ?, preco = ?,
-quantidade=? WHERE idproduto = ?;");
+            $sql = $conecta->prepare("UPDATE produto SET nome = ?, preco = ?,quantidade=? WHERE idproduto = ?;");
             $sql->bindParam(1, $_POST['txtNome']);
             $sql->bindParam(2, $_POST['txtPreco']);
             $sql->bindParam(3, $_POST['txtQtd']);
