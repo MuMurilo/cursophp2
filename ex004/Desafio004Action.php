@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Desafio 001 action</title>
+    <title>Desafio 004 action</title>
 </head>
 
 <body>
@@ -15,10 +15,17 @@
 <?php 
 
 
+$inicio = date ("m-d-Y", strtotime("-7 days"));
+$fim = date("m-d-Y");
+$url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''.$inicio.'\'&@dataFinalCotacao=\''.$fim.'\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+$dados = json_decode(file_get_contents($url),true);
 
+// var_dump($dados);
+
+$cotacao = $dados["value"][0]["cotacaoCompra"];
 
 $num = $_POST['numero'];
-$dol = $num/4.94;
+$dol = $num/$cotacao;
 $dol = number_format($dol, 2, ',', ' ');
 echo "O número digitado foi: $num <br>";
 echo 'Seu valor em Reais é: <i class="fa-solid fa-brazilian-real-sign"></i>'. $num;
