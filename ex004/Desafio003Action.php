@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Desafio 001 action</title>
 </head>
-
 <body>
-<h1>O Seu dinheiro em Dolares é: <i class="fa fa-down-long "></i> </h1>
+<h1>O Seu dinheiro em Dolares é: <i class="fa fa-down-long "></i></h1>
 <h2>
 <?php 
-
-
-
 
 $num = $_POST['numero'];
 $dol = $num/4.94;
@@ -25,6 +21,7 @@ echo 'Seu valor em Reais é: <i class="fa-solid fa-brazilian-real-sign"></i>'. $
 echo"<br>";
 echo 'Seu valor em Dolar é: <i class="fa-solid fa-dollar-sign"></i>'. $dol;
 echo"<br>";
+
 ?>
 </h2>
 </body>
