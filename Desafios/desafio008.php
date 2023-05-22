@@ -12,7 +12,7 @@
 <body>
     <?php
     $num = $_POST['v1'] ?? 0;
-    $minimo = 1380.00 ?? 1380;
+    // $minimo = 1380.00 ?? 1380; item do desafio 007
     ?>
 
     <main>
@@ -20,21 +20,20 @@
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <label for="v1">Número</label>
             <input type="number" name="v1" id="v1" value="<?= $num ?>">
-<p>Considerando o salário mínimo de:<?= $minimo ?> </p>
-            <input type="submit" value="Calcular">
+            <input type="submit" value="Calcular Raízes">
 
         </form>
     </main>
     <section>
         <h1>Resultado Final </h1>
         <?php
-$result=$salario/$minimo;
-$resultint = (int)$result;
-$resto = $salario - ($resultint*$minimo);
-var_dump($resto);
+$raizqua=$num**(1/2);
+$raizcub = $num**(1/3);
+// $resto = $salario - ($resultint*$minimo); do desafio 007
+// var_dump($resto); do desafio 007
 echo "<ul>
-<li>Seu salário é: $salario</li>
-<li>Que conresponde a: $resultint salários mínimos + R$ $resto.</li>
+<li>A Raiz Quadrada do Número " . number_format($num, 3,",",".")." é: ". number_format($raizqua, 3,",","."). "</li>
+<li>E a raíz Cubica é: " . number_format($raizcub, 3,",",".").  "</li>
 </ul>
  "
 
