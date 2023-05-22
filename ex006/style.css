@@ -55,8 +55,9 @@ p {
 }
 
 h2, h3, h4 {
-    color: #fff4fb;
+    color: #cc12ad;
     margin: 0 0 10px 0;
+    text-shadow: 3px 3px 0px rgb(255, 4, 4);
 }
 
 a {
