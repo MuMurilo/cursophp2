@@ -18,7 +18,7 @@
     ?>
 
     <main>
-        <h1>Anatomia de uma Divisão</h1>
+        <h1>Cálculo de Médias</h1>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <label for="v1">1° Nota</label>
             <input type="number" name="v1" id="v1" value="<?= $nota1 ?>">
