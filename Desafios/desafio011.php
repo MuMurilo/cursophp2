@@ -11,8 +11,8 @@
 
 <body>
     <?php
-    $produto = $_POST['v1'] ?? 0;
-    $reajuste = $_POST['v2'];
+    $produto = $_POST['v1'] ?? '0';
+    $reajuste = $_POST['v2']??'0';
     ?>
 
     <main>
@@ -20,9 +20,9 @@
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <label for="v1">valor do Produto em R$ :</label>
             <input type="number" name="v1" id="v1" step="0.01" value="<?= $produto ?>">
-            <label for="v2"> Qual será o percentual de reajuste <strong> (<?= $reajuste ?>%)</strong></label>
-            <input type="range" name="v2" id="v2" value="<?= $reajuste ?>">
-            <input type="submit" value="Analisar">
+            <label for="v2"> Qual será o percentual de reajuste <strong>(<span id="p">?</span>%)</strong></label>
+            <input type="range" name="v2" id="v2" value="<?= $reajuste ?>" oninput="mudaValor()">
+            <input type="submit" value="Reajustar">
 
         </form>
     </main>
@@ -40,7 +40,12 @@ $final = $produto+$result;
         "
         ?>
     </section>
-
+    <script>
+        mudaValor()
+        function mudaValor(){
+            p.innerText = v2.value
+        }
+    </script>
 </body>
 
 </html>

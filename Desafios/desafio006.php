@@ -40,6 +40,17 @@ $resto = $dividendo - ($resultint*$divisor);
        </ul>
         "
         ?>
+
+        <table class="divisao">
+            <tr>
+                <td><?=$dividendo?></td>
+                <td><?=$divisor?></td>
+            </tr>
+            <tr>
+                <td><?=$resto?></td>
+                <td><?=$resultint?></td>
+            </tr>
+        </table>
     </section>
 
 </body>
